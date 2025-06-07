@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "build": "cd familiada-app && npm install && npm run build"
-  }
-}
