@@ -2,7 +2,7 @@
   "name": "familiada-web-app",
   "compatibility_date": "2025-06-07",
   "assets": {
-    "directory": "./dist"
-  },
-  "not_found_handling": "single_page_application"
+    "directory": "./dist",
+    "not_found_handling": "single_page_application"
+  }
 }
