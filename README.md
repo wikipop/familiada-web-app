@@ -56,15 +56,15 @@ yarn dev
 
 Aplikacja będzie dostępna pod adresem: http://localhost:5173/
 
-## Trasy aplikacji
+## Ścieżki aplikacji
 
 - **/admin** - Panel administratora do zarządzania grą
 - **/game** - Tablica gry dla graczy i publiczności
 
 ## Jak grać
 
-1. Otwórz trasę **/admin** w jednej karcie przeglądarki
-2. Otwórz trasę **/game** w drugiej karcie przeglądarki (najlepiej na innym ekranie widocznym dla graczy)
+1. Otwórz ścieżkę **/admin** w jednej karcie przeglądarki
+2. Otwórz ścieżkę **/game** w drugiej karcie przeglądarki (najlepiej na innym ekranie widocznym dla graczy)
 3. W panelu administratora wybierz pytanie i kliknij "Rozpocznij grę"
 4. Odkrywaj odpowiedzi klikając przycisk "Odkryj" obok każdej odpowiedzi
 5. Dodawaj błędy (X) klikając przycisk "Dodaj X"
