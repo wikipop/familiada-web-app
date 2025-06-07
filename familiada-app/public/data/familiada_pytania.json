@@ -1,0 +1,298 @@
+[
+    {
+        "pytanie": "Sąsiad Polski",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "Niemcy",
+                "punkty": 22
+            },
+            {
+                "odpowiedź": "Czechy",
+                "punkty": 22
+            },
+            {
+                "odpowiedź": "Litwa",
+                "punkty": 19
+            },
+            {
+                "odpowiedź": "Morze Bałtyckie",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "Ukraina",
+                "punkty": 7
+            },
+            {
+                "odpowiedź": "Rosja",
+                "punkty": 5
+            },
+            {
+                "odpowiedź": "europa",
+                "punkty": 4
+            },
+            {
+                "odpowiedź": "bułgaria",
+                "punkty": 3
+            }
+        ]
+    },
+    {
+        "pytanie": "6 - 1 * 0 + 2 ÷ 2(1+2)",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "9",
+                "punkty": 22
+            },
+            {
+                "odpowiedź": "0",
+                "punkty": 18
+            },
+            {
+                "odpowiedź": "Trzy i Pół",
+                "punkty": 18
+            },
+            {
+                "odpowiedź": "3",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "12",
+                "punkty": 13
+            },
+            {
+                "odpowiedź": "7",
+                "punkty": 5
+            },
+            {
+                "odpowiedź": "6",
+                "punkty": 5
+            },
+            {
+                "odpowiedź": "1/3",
+                "punkty": 4
+            }
+        ]
+    },
+    {
+        "pytanie": "Co można robić w sali lekcyjnej?",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "Spać",
+                "punkty": 24
+            },
+            {
+                "odpowiedź": "Pić",
+                "punkty": 16
+            },
+            {
+                "odpowiedź": "jeść",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "gadać",
+                "punkty": 13
+            },
+            {
+                "odpowiedź": "szczekać",
+                "punkty": 10
+            },
+            {
+                "odpowiedź": "uczyć się",
+                "punkty": 8
+            },
+                        {
+                "odpowiedź": "fikołki",
+                "punkty": 6
+            },
+            {
+                "odpowiedź": "bawić się z kolegom",
+                "punkty": 5
+            }
+        ]
+    },
+    {
+        "pytanie": "Italian Brainrot",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "tung tung tung sahur",
+                "punkty": 18
+            },
+            {
+                "odpowiedź": "cappuccino assassino",
+                "punkty": 17
+            },
+            {
+                "odpowiedź": "brr brr patapim",
+                "punkty": 16
+            },
+            {
+                "odpowiedź": "bombardino coccodrillo",
+                "punkty": 15
+            },
+            {
+                "odpowiedź": "ballerina cappuccina",
+                "punkty": 11
+            },
+            {
+                "odpowiedź": "tripi tropi ",
+                "punkty": 7
+            },
+            {
+                "odpowiedź": "lirili larila",
+                "punkty": 7
+            },
+            {
+                "odpowiedź": "El bobrito",
+                "punkty": 5
+            }
+        ]
+    },
+    {
+        "pytanie": "Więcej niż jedno zwierze to?",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "owca",
+                "punkty": 19
+            },
+            {
+                "odpowiedź": "lama",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "stado",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "dwa",
+                "punkty": 13
+            },
+            {
+                "odpowiedź": "szkoła",
+                "punkty": 12
+            },
+            {
+                "odpowiedź": "konfederacja",
+                "punkty": 11
+            },
+            {
+                "odpowiedź": "trzy i pół",
+                "punkty": 9
+            },
+            {
+                "odpowiedź": "zwierzęta",
+                "punkty": 8
+            }
+        ]
+    },
+    {
+        "pytanie": "Części komputera",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "Myszka",
+                "punkty": 19
+            },
+            {
+                "odpowiedź": "kabel",
+                "punkty": 17
+            },
+            {
+                "odpowiedź": "monitor",
+                "punkty": 16
+            },
+            {
+                "odpowiedź": "fotel",
+                "punkty": 15
+            },
+            {
+                "odpowiedź": "karta graficzna",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "płyta główna",
+                "punkty": 7
+            },
+            {
+                "odpowiedź": "biurko",
+                "punkty": 5
+            },
+            {
+                "odpowiedź": "procesor",
+                "punkty": 3
+            }
+        ]
+    },
+    {
+        "pytanie": "Francuskie Marki Samochodów",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "fiat",
+                "punkty": 21
+            },
+            {
+                "odpowiedź": "bmw",
+                "punkty": 17
+            },
+            {
+                "odpowiedź": "citroen",
+                "punkty": 16
+            },
+            {
+                "odpowiedź": "ferrari",
+                "punkty": 15
+            },
+            {
+                "odpowiedź": "peugot",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "mercedes",
+                "punkty": 8
+            },
+            {
+                "odpowiedź": "renualt",
+                "punkty": 5
+            },
+            {
+                "odpowiedź": "aston martin",
+                "punkty": 4
+            }
+        ]
+    },
+    {
+        "pytanie": "Zwierze w 31LO",
+        "odpowiedzi": [
+            {
+                "odpowiedź": "foka",
+                "punkty": 18
+            },
+            {
+                "odpowiedź": "czapla",
+                "punkty": 17
+            },
+            {
+                "odpowiedź": "lis",
+                "punkty": 14
+            },
+            {
+                "odpowiedź": "pajak",
+                "punkty": 13
+            },
+            {
+                "odpowiedź": "karaluch grzesiu",
+                "punkty": 12
+            },
+            {
+                "odpowiedź": "kret",
+                "punkty": 11
+            },
+            {
+                "odpowiedź": "wojciech",
+                "punkty": 8
+            },
+            {
+                "odpowiedź": "wydra",
+                "punkty": 2
+            }
+        ]
+    }
+]
