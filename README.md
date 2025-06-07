@@ -1,7 +1,7 @@
 # Familiada - Gra Rodzinna
 
 Interaktywna aplikacja do gry w Familiadę, stworzona przy użyciu Vue 3, TypeScript, Vite, Tailwind CSS i shadcn/vue.
-
+![Podgląd](assets/preview.png)
 ## Funkcje
 
 - Panel administratora do zarządzania pytaniami i odpowiedziami
