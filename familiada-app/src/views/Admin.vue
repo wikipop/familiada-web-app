@@ -15,16 +15,26 @@
             </option>
           </select>
 
-          <button 
-            @click="startGame" 
-            class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md"
-          >
-            Rozpocznij grę
-          </button>
+          <div class="flex space-x-2">
+            <button 
+              v-if="!currentQuestion"
+              @click="startGame" 
+              class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md"
+            >
+              Rozpocznij grę
+            </button>
+            <button 
+              v-if="currentQuestion"
+              @click="changeQuestion" 
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md"
+            >
+              Zmień pytanie
+            </button>
+          </div>
         </div>
       </div>
 
-      <div v-if="currentQuestion" class="bg-white rounded-lg shadow-md p-6">
+      <div v-if="currentQuestion" class="bg-white rounded-lg shadow-md p-6 mb-6">
         <h2 class="text-xl font-semibold mb-4">{{ currentQuestion.pytanie }}</h2>
 
 
@@ -72,33 +82,70 @@
           </div>
         </div>
 
-        <div class="mt-6 flex justify-between">
-          <div>
+        <div class="mt-6 space-y-4">
+          <!-- Question Selection Controls -->
+          <div class="flex items-center space-x-2 py-2 bg-gray-50 rounded-lg">
+            <div class="flex-grow">
+              <select 
+                v-model="selectedQuestionIndex" 
+                class="w-full p-2 border border-gray-300 rounded-md"
+              >
+                <option v-for="(question, index) in questions" :key="index" :value="index">
+                  {{ question.pytanie }}
+                </option>
+              </select>
+            </div>
             <button 
-              @click="addStrike" 
-              class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md mr-2"
-              :disabled="strikes >= 3"
+              @click="changeQuestion" 
+              class="bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-md whitespace-nowrap"
             >
-              Dodaj X
+              Zmień pytanie
             </button>
-            <span class="text-xl font-bold">
-              {{ 'X'.repeat(strikes) }}
-            </span>
-          </div>
-
-          <div class="flex space-x-2">
+            <p>
+              lub
+            </p>
             <button 
               @click="nextQuestion" 
-              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md"
+              class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md whitespace-nowrap"
             >
-              Następne pytanie
+              Kolejne pytanie
             </button>
-            <button 
-              @click="resetGame" 
-              class="bg-gray-600 hover:bg-gray-700 text-white font-medium py-2 px-4 rounded-md"
+          </div>
+
+          <!-- Game Controls -->
+          <div class="flex justify-between">
+            <div>
+              <button
+                @click="addStrike"
+                class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md mr-2"
+                :disabled="strikes >= 3"
+              >
+                Dodaj X
+              </button>
+              <span class="text-xl font-bold">
+                {{ 'X'.repeat(strikes) }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div v-if="currentQuestion" class="bg-white rounded-lg shadow-md p-6 mb-6">
+        <div class="flex gap-5">
+          <div>
+            <button
+                @click="resetGame"
+                class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md"
+                :disabled="!doesUserWantToEndGame"
             >
               Resetuj grę
             </button>
+          </div>
+          <div class="flex items-center gap-2">
+            <input type="checkbox" v-model="doesUserWantToEndGame" value="false">
+            <p>
+              POTWIERDZAM, IŻ CHCĘ ZRESETOWAĆ GRE
+            </p>
           </div>
         </div>
       </div>
@@ -120,6 +167,7 @@ interface Question {
 }
 
 // State
+const doesUserWantToEndGame = ref(false);
 const questions = ref<Question[]>([]);
 const selectedQuestionIndex = ref<number>(0);
 const currentQuestion = ref<Question | null>(null);
@@ -226,6 +274,21 @@ const nextQuestion = () => {
     selectedQuestionIndex.value = (selectedQuestionIndex.value + 1) % questions.value.length;
 
     // Set the new current question
+    currentQuestion.value = questions.value[selectedQuestionIndex.value];
+
+    // Reset answers, strikes, and points pool, but keep scores
+    revealedAnswers.value = [];
+    strikes.value = 0;
+    pointsPool.value = 0;
+
+    // Update localStorage to sync with game view
+    updateGameState();
+  }
+};
+
+const changeQuestion = () => {
+  if (questions.value.length > 0 && selectedQuestionIndex.value !== null) {
+    // Set the current question based on the selected index
     currentQuestion.value = questions.value[selectedQuestionIndex.value];
 
     // Reset answers, strikes, and points pool, but keep scores
