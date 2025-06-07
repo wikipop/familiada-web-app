@@ -62,7 +62,7 @@ Pytania i odpowiedzi są przechowywane w pliku `public/data/familiada_pytania.js
 
 W repo jest też skrypt, który automatycznie konwertuje pytania z csv do jsona i punktuje je (pomocne w przypadku małej 
 próby ankiety), aby go użyć, przygotuj pytania w tabeli w [takim formacie](https://docs.google.com/spreadsheets/d/1tezt8hgNLtGwNgMyhBrUlY2FUZ1j6iLHH0yGvZl-X1w/edit?usp=sharing)
-i podmień plik /data/familiada_pytania.csv na swój własny.
+i podmień plik `/data/familiada_pytania.csv` na swój własny.
 
 ## Technologie
 
