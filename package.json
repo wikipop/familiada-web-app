@@ -1,9 +1,0 @@
-{
-  "name": "familiada-app",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "build": "cd familiada-app && yarn run build"
-  }
-}
