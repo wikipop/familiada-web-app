@@ -107,7 +107,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue';
+import { ref, onMounted } from 'vue';
 
 interface Answer {
   odpowiedź: string;
@@ -131,9 +131,9 @@ const activeTeam = ref<number>(1); // 1 for team 1, 2 for team 2
 const pointsPool = ref<number>(0); // Points accumulated from revealed answers
 
 // Computed
-const currentQuestionData = computed(() => {
-  return selectedQuestionIndex.value !== null ? questions.value[selectedQuestionIndex.value] : null;
-});
+// const currentQuestionData = computed(() => {
+//   return selectedQuestionIndex.value !== null ? questions.value[selectedQuestionIndex.value] : null;
+// });
 
 // Methods
 const loadQuestions = async () => {

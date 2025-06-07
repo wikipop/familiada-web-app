@@ -23,13 +23,33 @@ Interaktywna aplikacja do gry w Familiadę, stworzona przy użyciu Vue 3, TypeSc
 
 ```bash
 cd familiada-app
+
+# npm
+npx install
+# yarn
 yarn install
 ```
 
 ## Uruchamianie aplikacji
 
-Uruchom serwer deweloperski:
+### npm
+Zbuduj i serwuj aplikację:
+```bash
+npx build
+npx preview
+```
+lub poprostu odpal serwer developerski
+```bash
+npx dev
+```
 
+### yarn
+Zbuduj i serwuj aplikację:
+```bash
+yarn build
+yarn preview
+```
+lub poprostu odpal serwer developerski
 ```bash
 yarn dev
 ```
