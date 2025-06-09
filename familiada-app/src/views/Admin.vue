@@ -46,6 +46,15 @@
               <p class="text-2xl font-bold text-yellow-600">{{ pointsPool }} pkt</p>
             </div>
             <div class="flex space-x-2">
+              <select v-model="selectedMultiplier" @click="updateGameState" class="px-2 py-1 rounded-md">
+                <option :value="0.5">x1/2</option>
+                <option :value="1">x1</option>
+                <option :value="2">x2</option>
+                <option :value="3">x3</option>
+                <option :value="4">x4</option>
+                <option :value="5">x5</option>
+              </select>
+
               <button 
                 @click="awardPointsToTeam(1)" 
                 class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-md"
@@ -178,6 +187,8 @@ const team2Score = ref<number>(0);
 const activeTeam = ref<number>(1); // 1 for team 1, 2 for team 2
 const pointsPool = ref<number>(0); // Points accumulated from revealed answers
 
+const selectedMultiplier = ref<number>(1);
+
 // Computed
 // const currentQuestionData = computed(() => {
 //   return selectedQuestionIndex.value !== null ? questions.value[selectedQuestionIndex.value] : null;
@@ -252,9 +263,9 @@ const addStrike = () => {
 const awardPointsToTeam = (team: number) => {
   if (pointsPool.value > 0) {
     if (team === 1) {
-      team1Score.value += pointsPool.value;
+      team1Score.value += pointsPool.value * selectedMultiplier.value;
     } else {
-      team2Score.value += pointsPool.value;
+      team2Score.value += pointsPool.value * selectedMultiplier.value;
     }
     pointsPool.value = 0;
 
@@ -322,7 +333,8 @@ const updateGameState = () => {
     team1Score: team1Score.value,
     team2Score: team2Score.value,
     activeTeam: activeTeam.value,
-    pointsPool: pointsPool.value
+    pointsPool: pointsPool.value,
+    selectedMultiplier: selectedMultiplier.value
   };
 
   localStorage.setItem('familiadaGameState', JSON.stringify(gameState));
@@ -346,6 +358,8 @@ onMounted(() => {
       team2Score.value = parsedState.team2Score || 0;
       activeTeam.value = parsedState.activeTeam || 1;
       pointsPool.value = parsedState.pointsPool || 0;
+
+      selectedMultiplier.value = parsedState.selectedMultiplier || 1;
 
       // Find the index of the current question
       if (currentQuestion.value) {

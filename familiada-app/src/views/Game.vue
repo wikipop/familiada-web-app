@@ -54,10 +54,16 @@
 
           <!-- Team Scores -->
           <div class="flex justify-end space-x-4">
+
+            <div v-if="selectedMultiplier != 1" class="bg-green-500 px-6 py-3 rounded-md border-2 border-green-400 animate-pulse">
+              <span class="text-white text-xl font-bold">Mnożnik: </span>
+              <span class="text-white text-2xl font-bold">x{{ selectedMultiplier }}</span>
+            </div>
+
             <!-- Points Pool -->
             <div v-if="pointsPool > 0" class="bg-yellow-500 px-6 py-3 rounded-md border-2 border-yellow-400 animate-pulse">
               <span class="text-white text-xl font-bold">Pula punktów: </span>
-              <span class="text-white text-2xl font-bold">{{ pointsPool }}</span>
+              <span class="text-white text-2xl font-bold">{{ pointsPool}}</span>
             </div>
 
             <!-- Team 1 Score -->
@@ -81,7 +87,6 @@
       <div class="text-white text-2xl">Oczekiwanie na rozpoczęcie gry...</div>
       <a class="text-sm text-white mb-4" target="_new" href="/admin">Panel Administratorski</a>
       <input type="checkbox" class="p-12"/>
-      <div class="animate-bounce text-yellow-400 text-4xl">⏳</div>
     </div>
   </div>
 </template>
@@ -107,6 +112,7 @@ const team1Score = ref<number>(0);
 const team2Score = ref<number>(0);
 const activeTeam = ref<number>(1);
 const pointsPool = ref<number>(0);
+const selectedMultiplier = ref<number>(1);
 
 // Methods
 const isAnswerRevealed = (index: number): boolean => {
@@ -133,6 +139,7 @@ const loadGameState = () => {
       team2Score.value = parsedState.team2Score || 0;
       activeTeam.value = parsedState.activeTeam || 1;
       pointsPool.value = parsedState.pointsPool || 0;
+      selectedMultiplier.value = parsedState.selectedMultiplier || 1;
     } catch (error) {
       console.error('Error parsing saved game state:', error);
     }
