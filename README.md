@@ -2,6 +2,10 @@
 
 Interaktywna aplikacja do gry w Familiadę, stworzona przy użyciu Vue 3, TypeScript, Vite, Tailwind CSS i shadcn/vue.
 ![Podgląd](assets/preview.png)
+
+> **Podgląd online:**  
+> Aplikacja jest dostępna w wersji demonstracyjnej pod adresem: [familiada31lo.wyniki.zip/](https://familiada31lo.wyniki.zip/)
+
 ## Funkcje
 
 - Panel administratora do zarządzania pytaniami i odpowiedziami
