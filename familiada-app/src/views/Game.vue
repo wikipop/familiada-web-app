@@ -80,7 +80,7 @@
     <div v-else class="flex flex-col items-center justify-center">
       <div class="text-white text-2xl">Oczekiwanie na rozpoczęcie gry...</div>
       <a class="text-sm text-white mb-4" target="_new" href="/admin">Panel Administratorski</a>
-      <button>Allow</button>
+      <input type="checkbox" class="p-12"/>
       <div class="animate-bounce text-yellow-400 text-4xl">⏳</div>
     </div>
   </div>
