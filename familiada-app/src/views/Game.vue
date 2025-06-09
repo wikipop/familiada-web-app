@@ -86,7 +86,7 @@
     <div v-else class="flex flex-col items-center justify-center">
       <div class="text-white text-2xl">Oczekiwanie na rozpoczęcie gry...</div>
       <a class="text-sm text-white mb-4" target="_new" href="/admin">Panel Administratorski</a>
-      <input type="checkbox" class="p-12"/>
+      <div class="animate-bounce text-yellow-400 text-4xl">⏳</div>
     </div>
   </div>
 </template>
@@ -146,21 +146,6 @@ const loadGameState = () => {
   }
 };
 
-// Sound effects (optional)
-const playRevealSound = () => {
-  const audio = new Audio('/sounds/reveal.mp3');
-  audio.play().catch(e => console.log('Sound play failed:', e));
-};
-
-const playStrikeSound = () => {
-  const audio = new Audio('/sounds/strike.mp3');
-  audio.play().catch(e => console.log('Sound play failed:', e));
-};
-
-// Watch for changes in revealed answers to play sound
-const prevRevealedCount = ref(0);
-const prevStrikes = ref(0);
-
 // Lifecycle hooks
 onMounted(() => {
   // Load initial state
@@ -168,19 +153,6 @@ onMounted(() => {
 
   // Listen for storage events from admin panel
   window.addEventListener('storage', handleStorageChange);
-
-  // Set up watchers for sound effects
-  setInterval(() => {
-    if (revealedAnswers.value.length > prevRevealedCount.value) {
-      playRevealSound();
-      prevRevealedCount.value = revealedAnswers.value.length;
-    }
-
-    if (strikes.value > prevStrikes.value) {
-      playStrikeSound();
-      prevStrikes.value = strikes.value;
-    }
-  }, 500);
 });
 
 onUnmounted(() => {

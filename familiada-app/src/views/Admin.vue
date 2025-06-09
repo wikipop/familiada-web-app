@@ -225,6 +225,17 @@ const startGame = () => {
   }
 };
 
+// Sound effects (optional)
+const playRevealSound = () => {
+  const audio = new Audio('/sounds/reveal.mp3');
+  audio.play().catch(e => console.log('Sound play failed:', e));
+};
+
+const playStrikeSound = () => {
+  const audio = new Audio('/sounds/strike.mp3');
+  audio.play().catch(e => console.log('Sound play failed:', e));
+};
+
 const revealAnswer = (index: number) => {
   if (!revealedAnswers.value.includes(index)) {
     revealedAnswers.value.push(index);
@@ -232,7 +243,7 @@ const revealAnswer = (index: number) => {
       // Add points to the pool instead of directly to team scores
       pointsPool.value += currentQuestion.value.odpowiedzi[index].punkty;
     }
-
+    playRevealSound(); // Play sound on reveal
     // Update localStorage to sync with game view
     updateGameState();
   }
@@ -254,7 +265,7 @@ const unrevealAnswer = (index: number) => {
 const addStrike = () => {
   if (strikes.value < 3) {
     strikes.value++;
-
+    playStrikeSound(); // Play sound on strike
     // Update localStorage to sync with game view
     updateGameState();
   }
